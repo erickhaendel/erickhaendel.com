@@ -1,0 +1,26 @@
+title: "Erick Haendel"
+url: "https://erickhaendel.com"
+
+collections:
+  portfolio:
+    output: true
+    sort_by: date
+
+sass:
+  load_paths:
+    - src/scss
+    - node_modules
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - src/
+  - LICENSE

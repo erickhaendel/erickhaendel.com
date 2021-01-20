@@ -1,0 +1,79 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="pt-br" itemscope
+itemtype="http://schema.org/BlogPosting">
+{% include head.html %}
+
+<body class="single">
+  {% include header.html %}
+
+  <main class="main" itemprop="main">
+    <article itemid="{{ site.url }}{{page.url | absolute}}" itemscope itemtype="http://schema.org/LiveBlogPosting" class="post">
+      <ol itemscope itemtype="http://schema.org/BreadcrumbList"
+        class="post-breadcrumb">
+        <li itemprop="itemListElement" itemscope
+          itemtype="http://schema.org/ListItem">
+          <meta itemprop="position" content="1" />
+          <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+        </li>
+        <li itemprop="itemListElement" itemscope
+          itemtype="http://schema.org/ListItem">
+          <meta itemprop="position" content="2" />
+          <a itemprop="item"
+            href="/{{page.categories[0]}}"><span itemprop="name">{{page.categories[0]}}</span></a>
+          </li>
+      </ol>
+
+      <header class="post-header">
+        <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}" content="{{ page.date | date_to_xmlschema }}" class="post-header__date"
+          pubdate>Publicado originalmente no dia {{ page.date | date: "%m/%d/%Y" }}</time>
+        <h2 itemprop="headline" class="post-header__title">{{ page.title }}</h2>
+        {%- if page.description -%}
+        <h3 itemprop="description" class="post-header__subtitle">{{ page.description }}</h3>
+        {%- endif -%}
+      </header>
+
+      <div itemprop="articleBody" class="post-content">
+        {%- if page.live -%}
+        <blockquote>
+          <p><a href="{{page.live}}" target="_blank" rel="noopener">Visitar o
+              projeto &gt;</a></p>
+        </blockquote>
+        {%- endif -%}
+
+        {{ content }}
+      </div>
+
+      <footer class="post-footer">
+        <nav class="post-navigation">
+          {% if page.previous.url %}
+            <a class="post-navigation__link post-navigation__prev" href="{{page.previous.url}}" rel="prev">
+              <span>{{page.previous.title}}</span>
+              <i class="uil uil-angle-left-b"></i>
+            </a>
+          {% endif %}
+          {% if page.next.url %}
+            <a class="post-navigation__link post-navigation__next" href="{{page.next.url}}" rel="next">
+              <i class="uil uil-angle-right-b"></i>
+              <span>{{page.next.title}}</span>
+            </a>
+          {% endif %}
+        </nav>
+
+        <button data-open="share" class="post-footer__share">
+          <i class="uil uil-share-alt"></i>
+        </button>
+      </footer>
+    </article>
+  </main>
+
+  {% include components/modals/share.html %}
+  {% include footer.html %}
+
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/single.js"></script>
+</body>
+
+</html>
