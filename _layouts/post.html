@@ -27,9 +27,17 @@ itemtype="http://schema.org/BlogPosting">
       </ol>
 
       <header class="post-header">
+        {%- if page.logo -%}
+        <img src="{{page.logo}}" alt="Logo" width="200">
+        {%- endif -%}
+        
         <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}" content="{{ page.date | date_to_xmlschema }}" class="post-header__date"
           pubdate>Publicado originalmente no dia {{ page.date | date: "%m/%d/%Y" }}</time>
+
+        {%- unless page.logo -%}
         <h2 itemprop="headline" class="post-header__title">{{ page.title }}</h2>
+        {%- endunless -%}
+
         {%- if page.description -%}
         <h3 itemprop="description" class="post-header__subtitle">{{ page.description }}</h3>
         {%- endif -%}
@@ -37,10 +45,10 @@ itemtype="http://schema.org/BlogPosting">
 
       <div itemprop="articleBody" class="post-content">
         {%- if page.live -%}
-        <blockquote>
-          <p><a href="{{page.live}}" target="_blank" rel="noopener">Visitar o
-              projeto &gt;</a></p>
-        </blockquote>
+        
+          <p><a href="{{page.live}}" target="_blank" rel="noopener" class="btn-visit">Visitar o
+              projeto <i class="uil uil-angle-right-b"></i></a></p>
+        
         {%- endif -%}
 
         {{ content }}

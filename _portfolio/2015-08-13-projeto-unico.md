@@ -2,7 +2,7 @@
 layout: post
 type: post
 title: Projeto Único Arquitetura
-description: "Desenvolvimento do site em wordpress do Projeto Único."
+description: "Projetos de arquitetura comercial, residencial e ambientação."
 tags: ['Wordpress', 'Front-end', 'Back-end']
 type: single
 live: "http://projetounico.arq.br"

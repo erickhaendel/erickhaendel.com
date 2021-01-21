@@ -1,7 +1,7 @@
 .page {
   &-header {
     margin-bottom: rem(40px);
-    
+
     &__title {
       margin: 0;
       font-size: rem(32px);
@@ -17,11 +17,26 @@
       margin-top: rem(8px);
       font-size: rem(18px);
       font-weight: 300;
-      
+
       @media (min-width: $tablet-pro) {
         margin-top: rem(16px);
         font-size: rem(20px);
       }
     }
+  }
+}
+
+.btn-visit {
+  padding: 1;
+  padding: 10px 15px;
+  color: #fff !important;
+  text-decoration: none !important;
+  background-color: $theme;
+  border-radius: 5px;
+  opacity: 0.4;
+  transition: 0.3s all;
+
+  &:hover {
+    opacity: 1;
   }
 }

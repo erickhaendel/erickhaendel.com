@@ -12,13 +12,15 @@
     width: auto;
     max-width: 100%;
     display: block;
+    margin-left: 20px;
+    margin-bottom: 20px;
   }
 
   p {
     margin: 36px 0;
     font-size: rem(18px);
     line-height: 1.5;
-    color: rgba($white, .8);
+    color: rgba($white, 0.8);
 
     @media (min-width: $tablet-pro) {
       font-size: rem(24px);
@@ -74,7 +76,6 @@
   }
 
   &--intro {
-
     p {
       margin: 0;
       font-size: rem(24px);
@@ -117,4 +118,3 @@
     }
   }
 }
-
