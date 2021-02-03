@@ -8,7 +8,7 @@ categories : ['Portfolio', 'Apps']
 type: single
 live: "http://servicos.cabo.pe.gov.br"
 permalink: /portfolio/:title/
-image: https://i.imgur.com/Nm3wHt7.png
+image: https://i.imgur.com/cNWIgRw.jpg
 logo: https://solucoesgreen.com/images/parceiro_cabo.png
 ---
 
@@ -21,4 +21,4 @@ Atualmente está em fase de integração de back-end com a equipe da prefeitura.
 - CSS
 - JS
 
-<img align="right" src="https://i.imgur.com/Nm3wHt7.png">
+<img align="right" src="https://i.imgur.com/cNWIgRw.jpg">
