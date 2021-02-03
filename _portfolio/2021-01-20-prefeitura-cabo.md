@@ -2,7 +2,7 @@
 layout: post
 type: post
 title: Prefeitura do Cabo de Santo Agostinho
-description: "[Em Desenvolvimento] Prefeitura do cabo de santo agostinho."
+description: "Prefeitura do cabo de santo agostinho."
 tags: [ 'Front-end', 'Design', 'UX/UI']
 categories : ['Portfolio', 'Apps']
 type: single
@@ -13,6 +13,7 @@ logo: https://solucoesgreen.com/images/parceiro_cabo.png
 ---
 
 Design e criação do front-end do site da prefeitura para ser implementada em python pela equipe da prefeitura.
+Atualmente está em fase de integração de back-end com a equipe da prefeitura.
 
 ### Técnologias Utilizadas
 
