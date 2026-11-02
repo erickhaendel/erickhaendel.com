@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import avatar from '../assets/avatar.jpg';
+import Icon from './Icon.astro';
+import { site, socials } from '../lib/site';
+
+interface Props {
+  part: 'avatar' | 'socials' | 'pill';
+}
+const { part } = Astro.props;
+---
+
+{
+  part === 'avatar' && (
+    <Image class="avatar" src={avatar} alt={`Foto de ${site.name}`} widths={[176, 352]} sizes="176px" loading="eager" />
+  )
+}
+{
+  part === 'pill' && (
+    <>
+      <a class="avatar avatar--small" href="/" aria-label="Início">
+        <Image src={avatar} alt="" width={72} height={72} />
+      </a>
+      <a class="pill__name" href="/">{site.name}</a>
+    </>
+  )
+}
+{
+  part !== 'avatar' && (
+    <ul class:list={['socials', { 'socials--small': part === 'pill' }]}>
+      {socials.map((s) => (
+        <li>
+          <a href={s.href} aria-label={s.label} rel="me noopener">
+            <Icon name={s.icon} />
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
+}

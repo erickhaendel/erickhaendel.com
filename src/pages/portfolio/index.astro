@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { getProjects } from '../../lib/site';
+
+const projects = await getProjects();
+const groups = [
+  { title: 'No ar', items: projects.filter((p) => p.data.live) },
+  { title: 'Jogos', items: projects.filter((p) => p.data.kind === 'Jogo') },
+  { title: 'Outros projetos', items: projects.filter((p) => !p.data.live && p.data.kind !== 'Jogo') },
+];
+---
+
+<Base
+  title="Portfolio"
+  description="Produtos e projetos que venho construindo, da FindUP a apps próprios."
+>
+  <main class="page wrap">
+    <h1 class="page-title">Portfolio</h1>
+    <p class="lede">O que venho construindo.</p>
+    {
+      groups.map((group) => (
+        <section>
+          <h2 class="year">{group.title}</h2>
+          <div class="grid">
+            {group.items.map((project) => (
+              <ProjectCard project={project} />
+            ))}
+          </div>
+        </section>
+      ))
+    }
+  </main>
+</Base>

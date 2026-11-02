@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import Identity from '../components/Identity.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Icon from '../components/Icon.astro';
+import { about, experience, getProjects, principles, site } from '../lib/site';
+
+const projects = await getProjects();
+---
+
+<Base>
+  <header class="hero" data-hero>
+    <div class="wrap">
+      <Identity part="avatar" />
+      <h1>{site.name}</h1>
+      <p class="hero__role">{site.role}</p>
+      <p class="hero__tagline">{site.tagline}</p>
+      <Identity part="socials" />
+    </div>
+  </header>
+  <main>
+    <section class="section" data-reveal>
+      <div class="wrap section-head">
+        <h2>Coisas que construí</h2>
+        <a href="/portfolio/">Ver todas</a>
+      </div>
+      <div class="rail">
+        {projects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+        <h2>Sobre</h2>
+        <div class="about">
+          {about.map((text) => <p>{text}</p>)}
+        </div>
+        <ul class="principles">
+          {
+            principles.map((item) => (
+              <li>
+                <strong>{item.title}</strong>
+                <p>{item.text}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+        <h2>Trajetória</h2>
+        <ul class="rows">
+          {
+            experience.map((item) => (
+              <li class="row">
+                <span>
+                  <strong>{item.role}</strong>
+                  <em>{item.company}</em>
+                </span>
+                <time>{item.period}</time>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <div class="wrap">
+        <h2>Contato</h2>
+        <div class="contact">
+          <p>Tem um projeto ou uma boa conversa? Me escreve.</p>
+          <a class="button" href={`mailto:${site.email}`}>
+            {site.email}
+            <Icon name="arrow" />
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

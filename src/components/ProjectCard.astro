@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+import { hostname } from '../lib/site';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+const { project } = Astro.props;
+const { title, description, cover, live, kind } = project.data;
+---
+
+<a class="card" href={`/portfolio/${project.id}/`}>
+  <div class="card__media">
+    <Image src={cover} alt="" widths={[400, 720]} sizes="340px" loading="lazy" />
+  </div>
+  <div class="card__meta">
+    <span>{live ? hostname(live) : kind}</span>
+    <span class="round"><Icon name="arrow" /></span>
+  </div>
+  <h3>{title}</h3>
+  <p>{description}</p>
+</a>

@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { getProjects, hostname } from '../../lib/site';
+
+export async function getStaticPaths() {
+  return (await getProjects()).map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { title, description, live, tags, cover, kind } = project.data;
+---
+
+<Base title={title} description={description}>
+  <main class="page wrap">
+    <p class="meta">{kind}</p>
+    <h1 class="page-title page-title--post">{title}</h1>
+    <p class="lede">{description}</p>
+    {tags.length > 0 && <ul class="tags">{tags.map((tag) => <li>{tag}</li>)}</ul>}
+    {
+      live && (
+        <a class="button" href={live} rel="noopener">
+          {hostname(live)}
+          <Icon name="arrow" />
+        </a>
+      )
+    }
+    <div class="shot">
+      <Image src={cover} alt={`Telas do projeto ${title}`} widths={[640, 976, 1400]} sizes="(max-width: 1024px) 100vw, 976px" />
+    </div>
+  </main>
+</Base>
