@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro';
+
+const updated = '8 de novembro de 2026';
+const contact = 'haendelhub@gmail.com';
+const apps = [
+  { name: 'Capy Doku: Queens Puzzle', id: 'com.haendelhub.capydoku' },
+  { name: 'Capy Flood: Color Puzzle', id: 'com.haendelhub.capyflood' },
+];
+---
+
+<Base
+  title="Política de privacidade"
+  description="Política de privacidade dos jogos Capy Doku e Capy Flood, publicados por Erick Haendel."
+>
+  <main class="page wrap legal">
+    <p class="meta">Atualizada em {updated}</p>
+    <h1 class="page-title page-title--post">Política de privacidade</h1>
+    <p class="lede">
+      Como os jogos publicados por Erick Haendel tratam os seus dados. Os jogos não
+      têm cadastro nem login, e não pedimos seu nome, e-mail ou telefone.
+    </p>
+
+    <h2>Apps abrangidos</h2>
+    <table>
+      <thead><tr><th>App</th><th>Identificador</th></tr></thead>
+      <tbody>
+        {apps.map((app) => <tr><td>{app.name}</td><td><code>{app.id}</code></td></tr>)}
+      </tbody>
+    </table>
+
+    <h2>Quem é o responsável</h2>
+    <p>
+      Erick Haendel Fontes, desenvolvedor pessoa física, Recife, Brasil. Contato:
+      <a href={`mailto:${contact}`}>{contact}</a>.
+    </p>
+
+    <h2>O que fica no seu aparelho</h2>
+    <p>
+      Progresso das fases, configurações, estatísticas e itens comprados ficam salvos
+      só no aparelho. Nada disso é enviado para um servidor nosso. Ao desinstalar o
+      jogo, esses dados são apagados.
+    </p>
+
+    <h2>Serviços de terceiros</h2>
+    <ul>
+      <li>
+        <strong>Google AdMob</strong> (anúncios): usa o ID de publicidade do aparelho,
+        o endereço IP e informações do aparelho para exibir e medir anúncios. Em
+        regiões que exigem, pedimos o seu consentimento antes de carregar anúncios, e
+        você pode rever a escolha nas Configurações do jogo. No iOS, o rastreamento só
+        acontece se você permitir no aviso do sistema.
+        <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">Como o Google usa esses dados</a>.
+      </li>
+      <li>
+        <strong>Firebase Analytics</strong> (Google): eventos de uso, como início e fim
+        de fase, dicas usadas e telas vistas, ligados a um identificador aleatório da
+        instalação. Usamos para entender como o jogo é jogado e melhorá-lo.
+      </li>
+      <li>
+        <strong>Firebase Crashlytics</strong> (Google): relatórios de falha com o modelo
+        do aparelho, a versão do sistema e o estado do app no momento do erro.
+      </li>
+      <li>
+        <strong>RevenueCat</strong>: processa as compras e assinaturas feitas pela
+        Google Play ou pela App Store e guarda o histórico de compras ligado a um
+        identificador anônimo, para liberar o que você comprou e permitir restaurar
+        compras. Os pagamentos são feitos pela loja; não recebemos dados de cartão.
+        <a href="https://www.revenuecat.com/privacy" rel="noopener">Privacidade da RevenueCat</a>.
+      </li>
+    </ul>
+    <p>
+      Não vendemos dados e não os compartilhamos com mais ninguém além desses
+      serviços. Os dados trafegam criptografados.
+    </p>
+
+    <h2>Crianças</h2>
+    <p>
+      Os jogos são livres para todas as idades, mas não são direcionados a crianças
+      menores de 13 anos e não coletamos de propósito dados de crianças.
+    </p>
+
+    <h2>Seus direitos</h2>
+    <p>
+      Pela LGPD e pelo GDPR, você pode pedir acesso, correção ou exclusão dos seus
+      dados. Veja como em <a href="/data-deletion/">Exclusão de dados</a> ou escreva
+      para <a href={`mailto:${contact}`}>{contact}</a>. Você também pode redefinir ou
+      desativar o ID de publicidade nas configurações do aparelho.
+    </p>
+
+    <h2>Mudanças</h2>
+    <p>Quando esta política mudar, a data no topo da página será atualizada.</p>
+
+    <hr />
+
+    <h2 lang="en">Privacy policy (English)</h2>
+    <div lang="en">
+      <p>
+        This policy covers Capy Doku: Queens Puzzle and Capy Flood: Color Puzzle,
+        published by Erick Haendel Fontes (Recife, Brazil). The games have no sign-up
+        or login and never ask for your name, email or phone number.
+      </p>
+      <p>
+        Level progress, settings, stats and purchased items are stored only on your
+        device and are deleted when you uninstall the game.
+      </p>
+      <p>
+        We use <strong>Google AdMob</strong> for ads (advertising ID, IP address and
+        device info; consent is requested where required and can be changed in the
+        game's Settings), <strong>Firebase Analytics</strong> for usage events tied to
+        a random install ID, <strong>Firebase Crashlytics</strong> for crash reports,
+        and <strong>RevenueCat</strong> to process store purchases and keep an
+        anonymous purchase history. Payments go through Google Play or the App Store;
+        we never see card details. We do not sell data. The games are not directed at
+        children under 13.
+      </p>
+      <p>
+        To request access to or deletion of your data, see
+        <a href="/data-deletion/">Data deletion</a> or email
+        <a href={`mailto:${contact}`}>{contact}</a>.
+      </p>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .legal h2 { margin-top: 40px; font-size: 1.5rem; letter-spacing: -0.02em; }
+  .legal p, .legal li { margin-top: 12px; max-width: 42em; line-height: 1.6; color: #333; }
+  .legal ul { padding-left: 1.25em; }
+  .legal table { margin-top: 16px; border-collapse: collapse; }
+  .legal th, .legal td { padding: 8px 16px 8px 0; text-align: left; border-bottom: 1px solid #e5e5e5; }
+  .legal hr { margin-top: 48px; border: 0; border-top: 1px solid #e5e5e5; }
+</style>

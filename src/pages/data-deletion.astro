@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+
+const contact = 'haendelhub@gmail.com';
+---
+
+<Base
+  title="Exclusão de dados"
+  description="Como pedir a exclusão dos seus dados nos jogos Capy Doku e Capy Flood."
+>
+  <main class="page wrap legal">
+    <h1 class="page-title page-title--post">Exclusão de dados</h1>
+    <p class="lede">
+      Capy Doku: Queens Puzzle e Capy Flood: Color Puzzle não têm contas. Veja como
+      apagar o que fica no aparelho e o que fica nos serviços que os jogos usam.
+    </p>
+
+    <h2>No aparelho</h2>
+    <p>
+      Progresso, configurações e estatísticas ficam só no aparelho. Desinstalar o jogo
+      apaga tudo. Compras feitas pela loja continuam na sua conta Google ou Apple e
+      podem ser restauradas ao reinstalar.
+    </p>
+
+    <h2>Dados de uso, falhas e compras</h2>
+    <p>
+      Para pedir a exclusão dos dados de uso (Firebase Analytics), dos relatórios de
+      falha (Firebase Crashlytics) e do histórico de compras (RevenueCat) ligados à sua
+      instalação, envie um e-mail para
+      <a href={`mailto:${contact}?subject=Exclus%C3%A3o%20de%20dados`}>{contact}</a>
+      com o nome do jogo e, se tiver, o comprovante de compra da loja. Respondemos em
+      até 30 dias e apagamos os dados que conseguirmos associar ao seu pedido.
+    </p>
+
+    <h2>Anúncios</h2>
+    <p>
+      Os anúncios usam o ID de publicidade do aparelho. Você pode redefinir ou apagar
+      esse ID nas configurações do Android (Google › Anúncios) ou do iOS (Privacidade ›
+      Rastreamento), e rever o consentimento de anúncios nas Configurações do jogo.
+    </p>
+
+    <hr />
+
+    <h2 lang="en">Data deletion (English)</h2>
+    <div lang="en">
+      <p>
+        The games have no accounts. Uninstalling removes all progress and settings
+        stored on the device. To request deletion of usage data, crash reports or
+        purchase history linked to your install, email
+        <a href={`mailto:${contact}?subject=Data%20deletion`}>{contact}</a> with the
+        game name and, if you have one, your store receipt. We reply within 30 days.
+        You can reset your advertising ID in your device settings at any time.
+      </p>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .legal h2 { margin-top: 40px; font-size: 1.5rem; letter-spacing: -0.02em; }
+  .legal p { margin-top: 12px; max-width: 42em; line-height: 1.6; color: #333; }
+  .legal hr { margin-top: 48px; border: 0; border-top: 1px solid #e5e5e5; }
+</style>
